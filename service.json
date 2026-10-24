@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "appName": "adonis-app",
+  "appType": "bring-your-own",
+  "stack": "shop",
+  "port": 3333,
+  "healthCheckPath": "/",
+  "dockerfile": "./Dockerfile",
+  "template": {
+    "id": "adonisjs",
+    "label": "AdonisJS (create-adonisjs)",
+    "upstream": "npm create adonisjs@latest",
+    "description": "A real create-adonisjs app (slim starter kit, no database)",
+    "notes": "Scaffolder runs at build time; HOST=0.0.0.0 and the port from PORT."
+  }
+}
