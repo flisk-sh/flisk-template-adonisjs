@@ -6,6 +6,7 @@
   "port": 3333,
   "healthCheckPath": "/",
   "dockerfile": "./Dockerfile",
+  "webUi": true,
   "template": {
     "id": "adonisjs",
     "label": "AdonisJS (create-adonisjs)",
