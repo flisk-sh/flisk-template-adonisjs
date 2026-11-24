@@ -11,3 +11,8 @@ test('ignores pinned digests and unrelated latest text', () => {
   const dockerfile = 'FROM node:22-alpine@sha256:abc\n# never use latest\nRUN npm create adonisjs@3.4.0 app\n';
   assert.deepEqual(findLatestTags(dockerfile), []);
 });
+
+test('ignores @latest on comment lines', () => {
+  const dockerfile = 'FROM node:22-alpine@sha256:abc\n# RUN npm create adonisjs@latest app\n  # old: npm create adonisjs@latest app\nRUN npm create adonisjs@3.4.0 app\n';
+  assert.deepEqual(findLatestTags(dockerfile), []);
+});
